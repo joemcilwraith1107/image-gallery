@@ -4,16 +4,21 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        '1/3': '33.33333%',
-        '2/3': '66.66666%',
         '1/1': '100%',
+      },
+      height: {
+        '0.1': '10%',
+      },
+      minWidth: {
+        '0.1': '10%',
+      },
+      maxWidth: {
+        '4/5': '80%',
       }
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [],
 }

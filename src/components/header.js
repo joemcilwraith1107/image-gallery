@@ -6,7 +6,7 @@ export default function FilterMenu ({setImages}) {
     const [activeFilter, setActiveFilter] = useState("All");
     const linkClass = "flex-auto text-xs sm:text-sm lg:text-base text-center text-gray-600 hover:text-gray-900 active:text-black";
     const menu = filters.map((filter) => (
-        <button key ={filter} className={activeFilter === filter ? `font-normal ${linkClass}` : `font-light ${linkClass}`} onClick={
+        <button key={filter} className={activeFilter === filter ? `font-normal ${linkClass}` : `font-light ${linkClass}`} onClick={
             ()  => {
             const photoData = photoArray(filter);
             setImages(photoData);
