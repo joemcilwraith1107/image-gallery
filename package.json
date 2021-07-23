@@ -8,6 +8,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -41,8 +42,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "file-loader": "^6.1.1",
     "postcss": "^7.0.36",
     "react-scripts": "4.0.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
+    "url-loader": "^4.1.1"
   }
 }
