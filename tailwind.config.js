@@ -8,12 +8,20 @@ module.exports = {
       },
       height: {
         '0.1': '10%',
+        '80-screen': '80vh',
+      },
+      width: {
+        '80-screen': '80vw',
       },
       minWidth: {
         '0.1': '10%',
       },
       maxWidth: {
         '4/5': '80%',
+        '80-screen': '80vw',
+      },
+      maxHeight: {
+        '80-screen': '80vh',
       }
     },
   },

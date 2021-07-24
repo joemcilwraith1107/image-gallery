@@ -18,29 +18,29 @@ class Lightbox extends Component {
     }
     
     render() {
-        const imgPortrait = "h-4/5 w-auto";
-        const imgLandscape = "w-full h-4/5"
+        const imgPortrait = "h-80-screen max-w-80-screen object-contain self-center";
+        const imgLandscape = "w-80-screen max-h-80-screen object-contain self-center"
         return (
-            <div className="absolute inset-0 z-50 bg-black bg-opacity-75 w-full h-full" onClick={this.closeLightBox}>
-                <div className="flex flex-row w-full h-full">
-                    <div className="h-full min-w-0.1">
+            <div className="fixed inset-0 z-50 bg-black bg-opacity-75 w-full h-full" onClick={this.closeLightBox}>
+                <div className="flex flex-row w-full h-full overflow-hidden">
+                    <div className="h-full min-w-0.1 flex-auto">
                         <div className="h-0.1"></div>
-                        <div className="h-4/5">
-                            <span className="text-white">&#10094;</span>
+                        <div className="h-4/5 flex justify-center">
+                            <span className="text-white place-self-center">&#10094;</span>
                         </div>
                         <div className="h-0.1"></div>
                     </div>
-                    <div className="h-full flex-auto">
+                    <div className="h-full flex-initial">
                         <div className="h-0.1"></div>
-                        <div className={this.orientation === 'landscape' ? `${imgLandscape}` : `${imgPortrait} flex justify-center`} >
-                            <img src={`/assets/photos/${this.name}`} alt={this.caption} className="h-full object-contain"  />
+                        <div className="h-4/5 flex" >
+                            <img src={`/assets/photos/${this.name}`} alt={this.caption} className={this.orientation === 'landscape' ? `${imgLandscape}` : `${imgPortrait}`}  />
                         </div>
                         <div className="h-0.1"></div>
                     </div>
-                    <div className="h-full min-w-0.1">
+                    <div className="h-full min-w-0.1 flex-auto">
                         <div className="h-0.1"></div>
-                        <div className="h-4/5">
-                            <span className="text-white">&#10094;</span>
+                        <div className="h-4/5 flex justify-center">
+                            <span className="text-white place-self-center">&#10095;</span>
                         </div>
                         <div className="h-0.1"></div>
                     </div>
