@@ -53,7 +53,7 @@ const Lightbox = ({ images, imageToShow, handleChange, handleClose}) => {
                 <div className="h-full flex-initial">
                     <div className="h-0.1"></div>
                     <div className="h-4/5 flex" >
-                        <img src={`/assets/photos/${image.name}`} alt={image.caption} className="h-80-screen max-w-80-screen object-contain self-center" />
+                        <img src={`./assets/photos/${image.name}`} alt={image.caption} className="h-80-screen max-w-80-screen object-contain self-center" />
                     </div>
                     <div className="h-0.1 py-0 sm:py-1 md:py-2 lg:py-3 xl:py-4">
                         <p className="text-base text-white">{image.caption}</p>
