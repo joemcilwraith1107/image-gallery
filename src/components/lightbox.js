@@ -38,7 +38,7 @@ const Lightbox = ({ images, imageToShow, handleChange, handleClose}) => {
     
 
     return (
-        <div id="lightbox" className="fixed inset-0 z-40 bg-black bg-opacity-75 w-full h-full box-border" onClick={close}>
+        <div id="lightbox" className="fixed inset-0 z-40 bg-black bg-opacity-90 w-full h-full box-border" onClick={close}>
             <div className="flex flex-row w-full h-full overflow-hidden">
                 <div className="w-0.09">
                     <div className="h-0.1"></div>
