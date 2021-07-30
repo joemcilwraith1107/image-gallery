@@ -12,8 +12,8 @@ module.exports = {
       },
       width: {
         '80-screen': '80vw',
-      },
-      minWidth: {
+        '0.09': '9%',
+        '0.01': '1%',
         '0.1': '10%',
       },
       maxWidth: {

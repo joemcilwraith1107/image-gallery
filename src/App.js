@@ -1,49 +1,59 @@
-import { Component, useState } from "react";
+import React, { useState } from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Gallery from "./components/gallery";
 import Lightbox from "./components/lightbox";
 import { photoArray } from "./images/imagelist";
 
-class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {activeFilter: 'All', lightboxDisplay: false, imageToShow: ''};
-		this.handleFilterChange = this.handleFilterChange.bind(this);
-	};
+const App = () => {
+	const initImages = photoArray('All');
+	const [images, setImages] = useState(initImages);
+	const [activeFilter, setActiveFilter] = useState('All');
+	const [lightboxDisplay, setLightboxDisplay] = useState(false);
+	const [imageToShow, setImageToShow] = useState(''); 
+    
+    const filterItems = (filter) => {
+        const updatedImages = photoArray(filter);
+		setActiveFilter(filter);
+		setImages(updatedImages);
+    };
 
-	handleFilterChange = (filter) => {
-		this.setState({activeFilter: filter});
-	};
+	const updateLightbox = (index) => {
+		setLightboxDisplay(true)
+		setImageToShow(index);
+	}
 
-	render() {
-		const images = photoArray(this.state.activeFilter);
-		return (
-			<div className="flex flex-col h-screen justify-between">
-				<Header 
-			  		activeFilter={this.state.activeFilter}
-					onFilterChange={this.handleFilterChange}
-				/>
-	  
-			  <Gallery 
+	const closeLightbox = () => {
+		setLightboxDisplay(false);
+		setImageToShow('');
+	}
+
+	return (
+		<div className="flex flex-col h-screen justify-between">
+			<Header 
+				activeFilter={activeFilter}
+				onFilterChange={filterItems}
+			/>
+	
+			<Gallery 
 				images={images}
-			  /> 
-	  
-			  {/* {
-			  this.state.lightboxDisplay ?
-			  <Lightbox 
-				image={images[imageToShow]}
-				setLightboxDisplay={setLightboxDisplay}
-				setImageToShow={setImageToShow}
-				imageArray={images}
-			  />
-			  : ""
-	  
-			  }              */}
-			  <Footer />
-			</div>
-		);
-	};
+				onImageClick={updateLightbox}
+			/> 
+	
+			{
+			lightboxDisplay ?
+			<Lightbox 
+				images={images}
+				imageToShow={imageToShow}
+				handleChange={updateLightbox}
+				handleClose={closeLightbox}
+			/>
+			: ""
+	
+			}
+			<Footer />
+		</div>
+	);
 }
 
 export default App
